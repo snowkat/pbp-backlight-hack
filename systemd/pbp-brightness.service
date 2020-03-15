@@ -1,0 +1,9 @@
+[Unit]
+Description=Sets the edp-backlight group
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'chgrp backlight /sys/class/backlight/edp-backlight/brightness ; chmod g+w /sys/class/backlight/edp-backlight/brightness'
+
+[Install]
+WantedBy=multi-user.target
