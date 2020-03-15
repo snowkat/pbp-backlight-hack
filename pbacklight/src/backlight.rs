@@ -15,7 +15,7 @@ impl Backlight {
         let mut attrib = String::new();
         File::open(self.path.join(entry))?.read_to_string(&mut attrib)?;
 
-        let attrib = attrib.parse::<u32>()?;
+        let attrib = attrib.trim().parse::<u32>()?;
         Ok(attrib)
     }
 
